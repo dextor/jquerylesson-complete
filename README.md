@@ -1,4 +1,4 @@
-js-app-template
-===============
+jquerylesson-complete
+=====================
 
-a common JS application setup
+completed jquery plugin lesson
