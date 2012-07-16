@@ -58,17 +58,17 @@
 		
 		var self = this;
 		
+		
 		self.$element.bind('click', function(e) {
 			// console.log('get data from: ', self.options.url);
 			
-			// remove old content
-			// show the loader
+			// remove old content, show the loader
 			var loader = '<li class="loading"></li>';
 			self.options.targetEl
 				.empty()
 				.html(loader);
-			
-			//make the request	
+				
+			// make the request
 			$.ajax({
 				url: self.options.url,
 				dataType: "json",
@@ -78,16 +78,15 @@
 				success: function(data, textStatus, jqXHR) {
 					// console.log(textStatus, data, jqXHR);
 					
-					//create the template for the data to render in
+					// create the template for the data to render in
 					$.template( "dataTemplate", self.options.template);
-					//remove the loader
+					// remove the loader
 					self.options.targetEl.empty();
-					//add new content using the template
+					// add new content using the template
 					$.tmpl( "dataTemplate", data.food ).appendTo( self.options.targetEl );
 				}
-			});
-			
-		});
+			}); //end ajax call
+		}); //end click binding
 	};
 	
 

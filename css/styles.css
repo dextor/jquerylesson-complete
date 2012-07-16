@@ -63,6 +63,7 @@ html, body {
 		}
 		#container .content ul.food-list {
 			display: block;
+			padding-bottom: 30px;
 		}
 			#container .content ul.food-list li {
 				width: 300px;
@@ -70,8 +71,17 @@ html, body {
 				display: block;
 				margin: 10px auto;
 			}
+				#container .content ul.food-list li img {
+					margin-bottom: 15px;
+				}
+				#container .content ul.food-list li h3 {
+					font-size: 16px;
+					margin-bottom: 5px;
+				}
 				#container .content ul.food-list li p {
-					text-indent: 8px;
+					text-indent: 0px;
+					margin-bottom: 13px;
+					border-bottom: 1px solid #ccc;
 				}
 			#container .content ul.food-list li.loading {
 				height: 158px;

@@ -40,7 +40,7 @@ window.MyApplication = (function(app, $) {
 		
 		//left side nav
 		var bindNavClick = function() {
-			var templateMarkup = "<li><h3>Name:</h3><p>${name}</p></li><li><h3>Meal:</h3><p>${meal}</p></li><li><h3>Calories:</h3><p>${calories}</p></li><li><h3>Deliciousness:</h3><p>${deliciousness}</p><img src=\"${image}\" /></li>";
+			var templateMarkup = "<li><img src=\"${image}\" /><h3>Name:</h3><p>${name}</p></li><li><h3>Meal:</h3><p>${meal}</p></li><li><h3>Calories:</h3><p>${calories}</p></li><li><h3>Deliciousness:</h3><p>${deliciousness}</p></li>";
 			nav
 				.find('a.ajaxable')
 				.each(function(i, val) {
@@ -60,7 +60,6 @@ window.MyApplication = (function(app, $) {
 				// app.main.consolelog(['bindNavClick: ', self]);
 			});
 		};
-		
 		
 		
 		
