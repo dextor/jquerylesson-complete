@@ -38,6 +38,12 @@ window.MyApplication = (function(app, $) {
 		};
 		
 		
+		var setColor = function() {
+			$('a.colorable').colorIt();
+		};
+		
+		
+		
 		//left side nav
 		var bindNavClick = function() {
 			var templateMarkup = "<li><img src=\"${image}\" /><h3>Name:</h3><p>${name}</p></li><li><h3>Meal:</h3><p>${meal}</p></li><li><h3>Calories:</h3><p>${calories}</p></li><li><h3>Deliciousness:</h3><p>${deliciousness}</p></li>";
@@ -165,6 +171,7 @@ window.MyApplication = (function(app, $) {
 				consoleFallback();
 				indexOfFallback();
 				sayHello();
+				setColor();
 				bindNavClick();
 			},
 			/* public methods */
