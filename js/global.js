@@ -16,6 +16,7 @@ window.MyApplication = (function(app, $) {
 		//jQuery ref's
 		var container = $('#container');	//main container
 		var nav = container.find('ul.left-nav');	//left side nav
+		var content = container.find('div.content');
 		
 		// settings
 		var showLog = true; // set to false in production (hide the consolelog calls)
@@ -39,11 +40,24 @@ window.MyApplication = (function(app, $) {
 		
 		//left side nav
 		var bindNavClick = function() {
+			var templateMarkup = "<li><h3>Name:</h3><p>${name}</p></li><li><h3>Meal:</h3><p>${meal}</p></li><li><h3>Calories:</h3><p>${calories}</p></li><li><h3>Deliciousness:</h3><p>${deliciousness}</p><img src=\"${image}\" /></li>";
+			nav
+				.find('a.ajaxable')
+				.each(function(i, val) {
+					var self = $(this);
+					self.ajaxLoadIt({
+						'url': 'data/'+self.attr('data-contenturl'), 
+						targetEl: content.find('ul.food-list'),
+						template: templateMarkup
+					});
+				});
+			
 			container.on('click', 'ul.left-nav a', function(e) {
 				e.preventDefault();
 				var self = $(this);
 				nav.find('a.active-page').removeClass('active-page');
 				self.addClass('active-page');
+				// app.main.consolelog(['bindNavClick: ', self]);
 			});
 		};
 		

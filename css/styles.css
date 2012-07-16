@@ -52,8 +52,7 @@ html, body {
 	#container .content {
 		width: 780px;
 		margin: 20px 10px;
-		outline: 1px dotted #ccc;
-/*		background: pink;*/
+		/*outline: 1px dotted #ccc;*/
 	}
 		#container .content h2 {
 			font-size: 18px;
@@ -62,6 +61,23 @@ html, body {
 		#container .content p {
 			text-indent: 16px;
 		}
+		#container .content ul.food-list {
+			display: block;
+		}
+			#container .content ul.food-list li {
+				width: 300px;
+				height: auto;
+				display: block;
+				margin: 10px auto;
+			}
+				#container .content ul.food-list li p {
+					text-indent: 8px;
+				}
+			#container .content ul.food-list li.loading {
+				height: 158px;
+				background: url(../imgs/ajax-loader.gif) no-repeat 10% 50%;
+			}
+			
 
 	
 #footer {
